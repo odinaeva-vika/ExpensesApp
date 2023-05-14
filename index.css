@@ -1,0 +1,178 @@
+.container {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+body{
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  background-color: bisque;
+}
+
+.wrapper {
+  /* margin-top: 10%; */
+  padding: 30px;
+  background-color: #FFFFFF;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.form {
+  margin-top: 41px;
+  display: flex;
+  gap: 28px;
+}
+
+.input-wrapper{
+  margin-bottom: 18px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #000000;
+}
+
+.input {
+  width: 100%;
+  height: 58px;
+  padding: 10px 70px 9px 22px;
+}
+
+.input-wrapper::before{
+  position: absolute;
+  content: "руб.";
+  top: 6px;
+  right: 17px;
+}
+
+.select{
+  padding: 0 22px;
+  width: 100%;
+  height: 58px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #000000;
+}
+
+.wrapper-list{
+  padding-top: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-wrapper{
+  position: relative;
+}
+
+.open-button{
+  position: absolute;
+  top: -4px;
+  right: -46px;
+}
+
+.button-plus {
+  display: block;
+  width: 370px;
+  height: 58px;
+  padding: 10px 0 9px 0;
+  color: #FFFFFF;
+  background: #0094FF;
+}
+
+.history-box{
+  width: 498px;
+}
+
+.limit-text {
+  font-weight: 700;
+}
+
+.total {
+  font-weight: 700;
+}
+
+.list li{
+  margin: 20px 0 0 50px;
+}
+
+.status-text {
+  padding: 35px 0 50px 0;
+  font-weight: 700;
+}
+
+.clear-button{
+  width: 484px;
+  padding: 11px 0 8px 0;
+  color: #FFFFFF;
+  background: #FF0000;
+}
+
+.history {
+  font-weight: 700;
+}
+
+.status-color{
+  color: #039100;
+}
+
+.status-color_red {
+  color: #FC0000;;
+}
+
+/**/
+.popap{
+  padding-top: 10%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+}
+
+.display{
+  display: block;
+}
+
+.wrapper__input-popap{
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #000000;
+  padding: 10px 70px 9px 22px;
+}
+
+.wrapper__input-popap::before{
+  position: absolute;
+  content: "руб.";
+  top: 6px;
+  right: 11px;
+}
+
+.popap__wrapper{
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 900px;
+  background-color: #FFFFFF;
+}
+
+.popap__box{
+  display: flex;
+  gap: 28px;
+}
+
+.change-button{
+  width: 100%;
+  background: #0094FF;
+  color: #FFFFFF;
+}
+
+.popap-limit{
+  font-weight: 700;
+  padding-bottom: 30px;
+}

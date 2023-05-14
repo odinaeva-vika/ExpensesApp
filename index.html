@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expenses App</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="wrapper">
+        <h1 class="title">Учет расходов</h1>
+        <div id="form" class="form">
+          <div class="form__wrapper">
+            <div class="input-wrapper">
+              <input id="expenseInput" class="input" type="number">
+            </div>
+            <select id="taskSelect" name="plan" class="select">
+              <option value="Транспорт">Транспорт</option>
+              <option value="Кафе и рестораны">Кафе и рестораны</option>
+              <option value="Аптека">Аптека</option>
+              <option value="Развлечения">Развлечения</option>
+            </select>
+          </div>
+          <button id="addButton" class="button-plus" type="submit">Добавить</button>
+        </div>
+        
+        <div class="wrapper-list">
+          <div class="content-wrapper">
+            <p class="limit-text">Лимит: <span id="limitValue" class="limit">10000</span> руб.</p>
+            <button id="openButton" class="open-button"><img src="image.png" alt="bb"></button>
+            <p class="total">Всего: <span id="totalValue" class="sum">0</span> руб.</p>
+            <p class="status-text">Статус: <span id="statusText" class="status-color">все хорошо</span></p>
+          </div>
+          <div class="history-box">
+            <span class="history">История:</span>
+            <div class="box">
+              <ol id="historyList" class="list">
+                <!-- <li>200 <span>руб.</span></li> -->
+              </ol>
+            </div>
+          </div>
+        </div>
+          <button class="clear-button" id="clearButton" type="button">Сбросить расходы</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="popap" class="popap">
+    <div class="popap__wrapper">
+      <div class="popap-limit">Новый лимит</div>
+      <div class="popap__box">
+        <div class="wrapper__input-popap">
+          <input class="input-popap" id="limitInput" type="number">
+        </div>
+        <button id="changeButton" class="change-button">Задать лимит</button>
+      </div>
+      <button id="closeButton">Закрыть</button>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+</body>
+</html>

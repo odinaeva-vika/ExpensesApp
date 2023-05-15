@@ -15,14 +15,11 @@ const changeButtonNode = document.querySelector("#changeButton");
 const limitInputNode = document.querySelector("#limitInput");
 
 let expenses = [];
-let types = [];
 
 let limit = parseInt(limitNode.innerText);
 
 const getLimitFromUser = () => parseInt(limitInputNode.value);
-
 const getExpenseFromUser = () => parseInt(inputNode.value);
-
 const getExpenseTypeFromUser = () => taskSelect.value;
 
 const changeButtonHandler = () => {
@@ -43,8 +40,10 @@ const addButtonHandler = () => {
     return;
   }
 
-  expenses.push(expense);
-  types.push(type);
+  expenses.push({
+    expense: expense,
+    type: type,
+  });
 
   render();
   clearInput();
@@ -60,31 +59,31 @@ const clearInput = () => {
 
 const renderHistory = () => {
   historyList.innerHTML = "";
-  expenses.forEach((expense, index) => {
+  expenses.forEach((expense) => {
     const historyItem = document.createElement("li");
-    historyItem.innerText = `${expense} руб. - ${types[index]}`;
-    
+    historyItem.innerText = `${expense.expense} руб. - ${expense.type}`;
     historyList.appendChild(historyItem);
   });
 };
 
+
 const getTotal = () => {
   let sum = 0;
   expenses.forEach((expense) => {
-    sum += expense;
+    sum += expense.expense;
   });
   return sum;
 };
 
 const renderStatus = () => {
-  const total = getTotal(expenses);
+  const total = getTotal();
   totalValueNode.innerText = total;
 
   if (total <= limit) {
     statusNode.innerText = STATUS_IN_LIMIT;
     statusNode.classList.remove("status-color_red");
   } else {
-    statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${limit - total} руб)`;
+    statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${total - limit} руб)`;
     statusNode.classList.add("status-color_red");
   }
 };
@@ -101,11 +100,11 @@ const clearButtonHandler = () => {
 
 const openButtonHandler = () => {
   popap.classList.add("display");
-}
+};
 
 const closeButtonHandler = () => {
   popap.classList.remove("display");
-}
+};
 
 addButtonNode.addEventListener("click", addButtonHandler);
 clearButtonNode.addEventListener("click", clearButtonHandler);
